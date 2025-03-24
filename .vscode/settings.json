@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.x": "html",
+        "window.h": "c",
+        "config.h": "c",
+        "enums.h": "c",
+        "widgets.h": "c",
+        "defines.h": "c",
+        "header_bar.h": "c"
+    }
+}
