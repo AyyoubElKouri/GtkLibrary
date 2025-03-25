@@ -212,6 +212,23 @@ Header_Bar *New_Header_Bar_Default(char *id, char *title){
 
     return header_Bar;
 }
+
+void Header_Bar_Set_Id(Header_Bar *header_bar, char *id){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return;
+    }
+
+    if(!!id){
+        printf("Error: id is required\n");
+        return;
+    }
+
+    if(header_bar->id) g_free(header_bar->id);
+    header_bar->id = g_strdup(id);
+    return;
+}
+
  
 
 
@@ -456,6 +473,102 @@ void Header_Bar_Set_Background_Image(Header_Bar *header_bar, char *background_Im
 
     return;
 }
+
+char *Header_Bar_Get_Id(Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->id;
+}
+
+
+char *Header_Bar_Get_Title(Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->title;
+}
+
+char *Header_Bar_Get_Subtitle(Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->subtitle;
+}
+
+bool Header_Bar_Get_Close_Button(Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return false;
+    }
+
+    return header_bar->close_Button;
+}
+
+char *Header_Bar_Get_Decoration_Layout (Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->decoration_Layout;
+}
+
+double Header_Bar_Get_Opacity (Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return 0;
+    }
+
+    return header_bar->opacity;
+}
+
+char *Header_Bar_Get_Icon(Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->icon;
+}
+
+char *Header_Bar_Get_Background_Color (Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->background_Color;
+}
+
+char *Header_Bar_Get_Background_Image (Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->background_Image;
+}
+
+GtkWidget *Header_Bar_Get_Custom_Title  (Header_Bar *header_bar){
+    if(!header_bar){
+        printf("Error: header_bar is NULL\n");
+        return NULL;
+    }
+
+    return header_bar->custom_Title;
+}
+
+
+
+
+
 
 void Header_Bar_Show(Header_Bar *header_bar){
     gtk_widget_show_all(header_bar->header_Bar);

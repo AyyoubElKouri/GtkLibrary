@@ -39,6 +39,8 @@
 
  // Setters ---------------------------------------------------------------------------------------------------------
 
+ void Header_Bar_Set_Id                  (Header_Bar *header_bar, char *id);
+
  void Header_Bar_Set_Title               (Header_Bar *header_bar, char *title);
 
  void Header_Bar_Set_Subtitle            (Header_Bar *header_bar, char *subtitle);
@@ -59,6 +61,8 @@
 
  
  // Getters ---------------------------------------------------------------------------------------------------------
+
+ char  *Header_Bar_Get_Id                (Header_Bar *header_bar);
 
  char  *Header_Bar_Get_Title             (Header_Bar *header_bar);
 
