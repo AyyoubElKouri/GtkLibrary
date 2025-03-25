@@ -170,47 +170,10 @@ Header_Bar *New_Header_Bar_Default(char *id, char *title){
         return NULL;
     }
 
-    Header_Bar *header_Bar = (Header_Bar *)malloc(sizeof(Header_Bar));
-    if(!header_Bar){
-        printf("Error: Failed to allocate memory for header bar\n");
-        return NULL;
-    }
-
-    header_Bar->id = id;
-    GtkWidget *header_bar = gtk_header_bar_new();
-
-    if(title){
-        gtk_header_bar_set_title(GTK_HEADER_BAR(header_bar), title);
-        header_Bar->title = g_strdup(title);
-    } else {
-        gtk_header_bar_set_title(GTK_HEADER_BAR(header_bar), "");
-        header_Bar->title = NULL;
-    }
-
-    gtk_header_bar_set_subtitle(GTK_HEADER_BAR(header_bar), "");
-    header_Bar->subtitle = NULL;
-
-    gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(header_bar), TRUE);
-    header_Bar->close_Button = TRUE;
-
-    gtk_header_bar_set_custom_title(GTK_HEADER_BAR(header_bar), NULL);
-    header_Bar->custom_Title = NULL;
-
-    gtk_header_bar_set_decoration_layout(GTK_HEADER_BAR(header_bar), ":minimize,maximize,close");
-    header_Bar->decoration_Layout = g_strdup(":minimize,maximize,close");
-
-    gtk_widget_set_opacity(header_bar, 1.0);
-    header_Bar->opacity = 1.0;
-
-    header_Bar->icon = NULL;
-
-    header_Bar->background_Color = NULL;
-
-    header_Bar->background_Image = NULL;
-
-    header_Bar->header_Bar = header_bar;
-
-    return header_Bar;
+    return New_Header_Bar(id, title, NULL, true, NULL,
+                          ":minimize,maximize,close", 1, NULL, 
+                           NULL, NULL
+    );
 }
 
 void Header_Bar_Set_Id(Header_Bar *header_bar, char *id){
