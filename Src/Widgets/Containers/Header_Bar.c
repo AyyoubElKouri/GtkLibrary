@@ -133,6 +133,7 @@
             gtk_style_context_add_class(context, "header");
             header_Bar->background_Color = g_strdup(background_Color);
         }
+        g_free(color);
 
     } else {
         header_Bar->background_Color = NULL;

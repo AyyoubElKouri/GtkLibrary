@@ -184,7 +184,7 @@ Window *New_Window_Default(char *id, bool main_Window){
 
     return New_Window(id, NULL, 700, 500, NULL, 1,
                       main_Window, true, true, false,
-                      true, false, NULL, NULL, center
+                      true, false, NULL, NULL, window_center
     );
 }
 
@@ -567,9 +567,14 @@ if(!window){
 
 }
 
-void Application_Start(void (*activate)()){
+void Window_Set_Container(Window *window, Container *container){
+    GtkWidget *_container = (GtkWidget *)container;
+    gtk_container_add(GTK_CONTAINER(window->window), _container);
+}
+
+void Application_Start(void (*Start_Function)()){
     application = gtk_application_new("org.example.app", G_APPLICATION_DEFAULT_FLAGS);
-    g_signal_connect(application, "activate", G_CALLBACK(activate), NULL);
+    g_signal_connect(application, "activate", G_CALLBACK(Start_Function), NULL);
     int status = g_application_run(G_APPLICATION(application), 0, NULL);
     g_object_unref(application);
 }

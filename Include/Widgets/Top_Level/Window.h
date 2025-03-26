@@ -16,7 +16,6 @@
  #define WINDOW_H
 
  #include "../../Config/Config.h"
- #include "../Top_Level/Window.h"
  
 
  typedef struct window Window;
@@ -143,10 +142,12 @@
  void    Window_Destroy             (Window *window);
 
  void    Window_Set_Header_Bar      (Window *window, Header_Bar *header_bar);
+
+ void    Window_Set_Container       (Window *window, Container *container);
  
 
  // Starting Application function ----------------------------------------------------------------------------------------------
 
- void Application_Start(void (*activate)());
+ void Application_Start(void (*Start_Function)());
 
  #endif // WINDOW_H
