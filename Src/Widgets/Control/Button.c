@@ -87,9 +87,12 @@ Button *New_Button
     Button_Set_Opacity      (buttonInfos, opacity);
     Button_Set_Dimensions   (buttonInfos, width, height);
     
-    Button_Set_Aligns       (buttonInfos, horizontal_Align, vertical_Align);
     Button_Set_Expands      (buttonInfos, horizontal_Expand, vertical_Expand);
     Button_Set_CallBack     (buttonInfos, callback);
+    
+    if(horizontal_Align < 0) horizontal_Align = -1;
+    if(vertical_Align   < 0) vertical_Align   = -1;
+    Button_Set_Aligns       (buttonInfos, horizontal_Align, vertical_Align);
 
     if(margin_Top    < 0) margin_Top    = 0;
     if(margin_Bottom < 0) margin_Bottom = 0;
@@ -295,7 +298,7 @@ void Button_Set_Margins(Button *button, int margin_Top, int margin_Bottom, int m
         gtk_widget_set_margin_end(GTK_WIDGET(button->button), margin_Right);
         button->margin_Right = margin_Right;
     }
-    
+
     return;
 }
 
