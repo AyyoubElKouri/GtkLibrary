@@ -10,15 +10,17 @@
  * @last_Update : 22-03-2025
  **********************************************************************************************************************/
 
- #ifndef DEFINES_H
- #define DEFINES_H
+#ifndef DEFINES_H
+#define DEFINES_H
 
- #include <gtk/gtk.h>
- #include <stdbool.h>
-
-
- typedef GtkWidget Widget;
+#include <gtk/gtk.h>
+#include <stdbool.h>
 
 
+typedef GtkWidget Widget;
+typedef void Element;
+typedef void Container;
 
- #endif // DEFINES_H
+
+
+#endif // DEFINES_H

@@ -6,6 +6,8 @@
         "enums.h": "c",
         "widgets.h": "c",
         "defines.h": "c",
-        "header_bar.h": "c"
+        "header_bar.h": "c",
+        "utils.h": "c",
+        "button.h": "c"
     }
 }
