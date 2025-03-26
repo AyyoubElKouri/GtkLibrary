@@ -16,6 +16,7 @@
 #ifndef WIDGETS_H
 #define WIDGETS_H
 
+#include "../Utils/Utils.h"
 #include "Control/Button.h"
 #include "Containers/Header_Bar.h"
 #include "Top_Level/Window.h"

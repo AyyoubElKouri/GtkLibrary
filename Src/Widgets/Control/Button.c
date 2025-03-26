@@ -1,5 +1,18 @@
+/**********************************************************************************************************************
+ * @file        : Button.c
+ * 
+ * @brief       : This file contains the implementation of the Button widget functions.
+ * 
+ * 
+ * @author      : Ayyoub El Kouri
+ * @version     : 1
+ * @date        : 25-03-2025
+ * @last_Update : 25-03-2025
+ **********************************************************************************************************************/
+ 
+
 #include "../../../Include/Widgets/Widgets.h"
-#include "../../../Include/Utils/Utils.h"
+
 
 typedef struct button
 {
