@@ -86,12 +86,17 @@ Button *New_Button
     Button_Set_Underline    (buttonInfos, use_Underline);
     Button_Set_Opacity      (buttonInfos, opacity);
     Button_Set_Dimensions   (buttonInfos, width, height);
-    Button_Set_Margins      (buttonInfos, margin_Top, margin_Bottom, margin_Left, margin_Right);
+    
     Button_Set_Aligns       (buttonInfos, horizontal_Align, vertical_Align);
     Button_Set_Expands      (buttonInfos, horizontal_Expand, vertical_Expand);
     Button_Set_CallBack     (buttonInfos, callback);
 
-    
+    if(margin_Top    < 0) margin_Top    = 0;
+    if(margin_Bottom < 0) margin_Bottom = 0;
+    if(margin_Left   < 0) margin_Left   = 0;
+    if(margin_Right  < 0) margin_Right  = 0;
+    Button_Set_Margins      (buttonInfos, margin_Top, margin_Bottom, margin_Left, margin_Right);
+
     return buttonInfos;
 }
 
@@ -274,28 +279,23 @@ void Button_Set_Margins(Button *button, int margin_Top, int margin_Bottom, int m
     if(margin_Top >= 0){
         gtk_widget_set_margin_top(GTK_WIDGET(button->button), margin_Top);
         button->margin_Top = margin_Top;
-    } else 
-        button->margin_Top = 0;
+    }
     
     if(margin_Bottom >= 0){
         gtk_widget_set_margin_bottom(GTK_WIDGET(button->button), margin_Bottom);
         button->margin_Bottom = margin_Bottom;
-    } else
-        button->margin_Bottom = 0;
+    }
 
     if(margin_Left >= 0){
         gtk_widget_set_margin_start(GTK_WIDGET(button->button), margin_Left);
         button->margin_Left = margin_Left;
-    } else
-        button->margin_Left = 0;
+    } 
 
     if(margin_Right >= 0){
         gtk_widget_set_margin_end(GTK_WIDGET(button->button), margin_Right);
         button->margin_Right = margin_Right;
-    } else
-        button->margin_Right = 0;
-
-
+    }
+    
     return;
 }
 
