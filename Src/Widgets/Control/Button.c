@@ -307,13 +307,15 @@ void Button_Set_Aligns(Button *button, Align horizontal_Align, Align vertical_Al
     if(!Valide_Pointer(button)) return;
 
     // Set the horizontal_Align and vertical_Align
-    if(horizontal_Align > 0){
+    int horizontal = horizontal_Align;
+    if(horizontal > 0){
         if(horizontal_Align > 4) horizontal_Align = align_center;
         gtk_widget_set_halign(GTK_WIDGET(button->button), horizontal_Align);
         button->horizontal_Align = horizontal_Align;
     }
 
-    if(vertical_Align > 0){
+    int vertical = vertical_Align;
+    if(vertical > 0){
         if(vertical_Align > 4) vertical_Align = align_center;
         gtk_widget_set_valign(GTK_WIDGET(button->button), vertical_Align);
         button->vertical_Align = vertical_Align;
