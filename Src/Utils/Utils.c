@@ -27,6 +27,7 @@ bool Valide_Image_Path(char *image_Path){
 }
 
 bool Valide_Pointer(void *pointer){
+    // Check the pointer
     if(!pointer){
         g_warning("Invalid pointer\n");
         return false;
