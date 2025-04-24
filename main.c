@@ -14,6 +14,7 @@ void ayyoub(){
         Window_Set_Header_Bar(window, header_bar);
 
         GtkWidget *box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+    
 
         Button *button = New_Button_Default("id_button", "Click Ayyoub");
 
