@@ -40,6 +40,7 @@
                                 char *background_Image
                             )
 {
+ 
     if(!id){
         printf("Error: id is required\n");
         return NULL;
