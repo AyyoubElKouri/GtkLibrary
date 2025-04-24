@@ -13,7 +13,6 @@
 #include "../../Include/Utils/Utils.h"
 
 
-
 bool Valide_Image_Path(char *image_Path){
     if(!image_Path) return false;
 
